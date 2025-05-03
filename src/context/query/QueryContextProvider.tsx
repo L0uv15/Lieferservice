@@ -1,6 +1,6 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { QueryClient, QueryClientProvider as TanstackProvider } from "@tanstack/react-query";
 
-export default function QueryContextProvider(props: React.PropsWithChildren): React.JSX.Element {
+export default function QueryClientProvider(props: React.PropsWithChildren): React.JSX.Element {
 
     const queryClient = new QueryClient({
         defaultOptions: {
@@ -12,8 +12,8 @@ export default function QueryContextProvider(props: React.PropsWithChildren): Re
     });
 
     return (
-        <QueryClientProvider client={queryClient}>
+        <TanstackProvider client={queryClient}>
             {props.children}
-        </QueryClientProvider>
+        </TanstackProvider>
     );
 }
