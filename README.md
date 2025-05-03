@@ -1,89 +1,54 @@
+# React + TypeScript + Vite
 
-<h1 align="center">
-  <br>
-  <a href="ParkDrink.png"><img src="ParkDrink.png" alt="Markdownify" width="200"></a>
-  <br>
-  ParkDrink
-  <br>
-</h1>
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## ParkDrink – Getränkelieferservice per Lastenrad 🚲🥤
+Currently, two official plugins are available:
 
-Ein nachhaltiger, mobiler Getränkelieferservice für Leipziger Parks – spontan, lokal und bequem per Web-App bestellbar. ParkDrink wurde im Rahmen einer universitären Fallstudie entwickelt und zeigt, wie moderne Webtechnologien zur Lösung urbaner Alltagsprobleme beitragen können.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
----
+## Expanding the ESLint configuration
 
-## ✨ Key Features
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-* 📦 **Live-Bestellung** – Produkte direkt aus dem Park bestellen  
-* 📍 **Standortfreigabe & ETA** – Standort teilen und ungefähre Ankunftszeit sehen  
-* 🚲 **Live-Tracking** – Verfolge das Lastenrad auf der Karte in Echtzeit  
-* 💳 **Sichere Bezahlung via Stripe**  
-* 🧭 **Benutzerfreundliches Interface** – optimiert für Smartphone & Sonnenlicht  
-* 🌙 **Dark/Light Mode**  
-* 🔒 **Datenschutzkonform (DSGVO)** – sichere Authentifizierung und Firestore Rules  
-* 🌐 **Cross-Platform** – Web-App funktioniert auf Android, iOS, Windows & macOS
+```js
+export default tseslint.config({
+  extends: [
+    // Remove ...tseslint.configs.recommended and replace with this
+    ...tseslint.configs.recommendedTypeChecked,
+    // Alternatively, use this for stricter rules
+    ...tseslint.configs.strictTypeChecked,
+    // Optionally, add this for stylistic rules
+    ...tseslint.configs.stylisticTypeChecked,
+  ],
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
+```
 
----
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-## ☁️ Tech Stack
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-| Bereich        | Technologie      |
-|----------------|------------------|
-| Frontend       | React (TypeScript) |
-| Backend/API    | Firebase Functions (NodeJS) |
-| Datenbank      | Firestore (NoSQL) |
-| Authentifizierung | Firebase Auth |
-| Hosting        | Firebase Hosting |
-| Zahlung        | Stripe API |
-| Karten/Tracking| Firestore Live-Updates + GPS |
-
----
-
-## 🤖 Entwicklungshighlights
-
-- 83 % der Entwicklungszeit: Den Fehler gesucht, den ein Semikolon verursacht hat.
-- 12 %: Diskussionen über Buttonfarben
-- 5 %: Tatsächliches Programmieren
-
----
-
-## 📦 Download
-
-Zurzeit keine produktive Version verfügbar – MVP im Rahmen einer Hochschul-Fallstudie. 
-
----
-
-## 🔐 Sicherheitskonzept
-
-- 🔐 **Firestore Security Rules** schützen sensible Daten
-- 🧮 **Preisberechnung nur serverseitig**
-- 🔁 **Bestellungen via Cloud Function `createOrder()`**
-- 🔑 **Nur authentifizierte Nutzer dürfen bestellen**
-
----
-
-## 🎓 Credits & Lizenzen
-
-Diese App wurde von einem studentischen Team im Rahmen des Kurses *Fallstudie Software-Engineering* entwickelt.
-
-**Open Source Komponenten:**
-- [React](https://react.dev/)
-- [Firebase](https://firebase.google.com/)
-- [Stripe](https://stripe.com/)
-- [Leaflet](https://leafletjs.com/)
-- [Vite](https://vitejs.dev/) 
-
----
-
-## 🧠 Du möchtest mitarbeiten?
-
-werde Student/-in an der IU 
-
----
-
-## 📜 License
-
-MIT License
-
----
+export default tseslint.config({
+  plugins: {
+    // Add the react-x and react-dom plugins
+    'react-x': reactX,
+    'react-dom': reactDom,
+  },
+  rules: {
+    // other rules...
+    // Enable its recommended typescript rules
+    ...reactX.configs['recommended-typescript'].rules,
+    ...reactDom.configs.recommended.rules,
+  },
+})
+```
