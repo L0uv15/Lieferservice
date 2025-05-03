@@ -1,10 +1,15 @@
 import React from "react";
+import AuthenticationContextProvider from "./context/authentication/AuthenticationContextProvider";
+import QueryContextProvider from "./context/query/QueryContextProvider";
+import AppRouter from "./router/AppRouter";
 
 export default function App(): React.JSX.Element {
 
   return (
-    <div>
-      Hier könnte Ihre Werbung stehen!
-    </div>
+    <QueryContextProvider>
+      <AuthenticationContextProvider>
+        <AppRouter />
+      </AuthenticationContextProvider>
+    </QueryContextProvider>
   );
 }
