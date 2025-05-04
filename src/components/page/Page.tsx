@@ -1,4 +1,4 @@
-import { makeStyles } from "@fluentui/react-components";
+import { makeStyles, tokens } from "@fluentui/react-components";
 import React from "react";
 import Navigation from "../navigation/Navigation";
 import PageProperties from "./PageProperties";
@@ -37,6 +37,6 @@ const useStyles = makeStyles({
         margin: "0 auto",
         display: "flex",
         flexDirection: "column",
-        backgroundColor: "lightgrey",
+        backgroundColor: tokens.colorBrandForeground1
     }
 })
