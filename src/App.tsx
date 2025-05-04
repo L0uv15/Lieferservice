@@ -8,7 +8,7 @@ export default function App(): React.JSX.Element {
   return (
     <QueryClientProvider>
       <AuthenticationContextProvider>
-        <AppRouter />
+          <AppRouter />
       </AuthenticationContextProvider>
     </QueryClientProvider>
   );
