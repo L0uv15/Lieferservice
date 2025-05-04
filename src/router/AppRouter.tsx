@@ -1,5 +1,7 @@
 import React from "react";
-import { BrowserRouter, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "../pages/Home";
+import Contact from "../pages/Contact";
 
 /**
  * @use AppRouter
@@ -10,7 +12,8 @@ export default function AppRouter(): React.JSX.Element {
   return (
     <BrowserRouter>
         <Routes>
-            
+            <Route path="/" element={<Home />}/>
+            <Route path="/" element={<Contact/>}/>
         </Routes>
     </BrowserRouter>
   );
