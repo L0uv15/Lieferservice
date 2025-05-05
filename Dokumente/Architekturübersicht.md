@@ -81,30 +81,4 @@
 
 ## 🖼️ Architekturdiagramm
 
-```
-                 +---------------------------+
-                 |       React Frontend      |
-                 |---------------------------|
-                 | - Produktansicht          |
-                 | - Warenkorb/Checkout      |
-                 | - Live-Tracking           |
-                 +---------------------------+
-                           |
-                           ▼
-               +-------------------------+
-               |  Firebase Functions     |  <-- Authentifizierung per Firebase Auth
-               |-------------------------|
-               | - createOrder()         |
-               | - Stripe Integration    |
-               +-------------------------+
-                           |
-                           ▼
-     +----------------------------+     +---------------------+
-     |       Firestore DB         |<--> |    Stripe API       |
-     |----------------------------|     |---------------------|
-     | - Bestellungen             |     | - Zahlungen         |
-     | - Produkte                 |     +---------------------+
-     | - Nutzer                   |
-     | - Fahrerpositionen         |
-     +----------------------------+
-```
+
