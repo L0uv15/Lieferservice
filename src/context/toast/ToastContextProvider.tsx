@@ -11,10 +11,10 @@ export default function ToastContextProvider(properties: React.PropsWithChildren
 
     const { dispatchToast } = useToastController(toasterId);
 
-    const dispatchError: ToastContext["dispatchError"] = ({ primaryContent, title }) => dispatchToast(<Toast title={title ?? "Error"} primaryContent={primaryContent} />, { intent: "error" });
+    const dispatchError: ToastContext["dispatchError"] = ({ primaryContent, title }) => dispatchToast(<Toast title={title ?? "Hoppla..."} primaryContent={primaryContent} />, { intent: "error" });
     const dispatchInfo: ToastContext["dispatchInfo"] = ({ primaryContent, title }) => dispatchToast(<Toast title={title ?? "Info"} primaryContent={primaryContent} />, { intent: "info" });
-    const dispatchSuccess: ToastContext["dispatchSuccess"] = ({ primaryContent, title }) => dispatchToast(<Toast title={title ?? "Success"} primaryContent={primaryContent} />, { intent: "success" });
-    const dispatchWarning: ToastContext["dispatchWarning"] = ({ primaryContent, title }) => dispatchToast(<Toast title={title ?? "Warning"} primaryContent={primaryContent} />, { intent: "warning" });
+    const dispatchSuccess: ToastContext["dispatchSuccess"] = ({ primaryContent, title }) => dispatchToast(<Toast title={title ?? "Das hat geklappt!"} primaryContent={primaryContent} />, { intent: "success" });
+    const dispatchWarning: ToastContext["dispatchWarning"] = ({ primaryContent, title }) => dispatchToast(<Toast title={title ?? "Achtung!"} primaryContent={primaryContent} />, { intent: "warning" });
 
     const value = {
         dispatchError,
