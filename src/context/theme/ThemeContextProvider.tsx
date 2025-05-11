@@ -5,7 +5,7 @@ import { greenBrandVariants } from "./brandVariants";
 
 export default function ThemeContextProvider(properties: React.PropsWithChildren): React.JSX.Element {
 
-    const [mode, _setMode] = React.useState<ThemeContext["mode"]>("light")
+    const [mode, _setMode] = React.useState<ThemeContext["mode"]>("dark")
 
     const setMode = React.useCallback<ThemeContext["setMode"]>((args) => _setMode(args.mode), []);
 

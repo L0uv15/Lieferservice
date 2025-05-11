@@ -15,6 +15,8 @@ export default function Page(properties: React.PropsWithChildren<PageProperties>
         <div className={pageWrapper}>
             <Navigation extensionNode={properties.navExtensionNode ?? null} />
             <div className={contentWrapper}>
+                <h1>{properties.pageTitle}</h1>
+                {/** ONLY FOR TESTING */}
                 {properties.children}
             </div>
         </div>
@@ -35,11 +37,12 @@ const useStyles = makeStyles({
     },
     contentWrapper: {
         width: "100%",
-        maxWidth: "1080px",
+        maxWidth: "1440px",
         flexGrow: 1,
         margin: "0 auto",
         display: "flex",
         flexDirection: "column",
         zIndex: 1,
+        paddingTop: "2rem",
     }
 })

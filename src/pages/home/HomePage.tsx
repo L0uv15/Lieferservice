@@ -5,8 +5,7 @@ export default function HomePage(): React.JSX.Element {
     //ONLY FOR TESTING PURPOSES
     return (
         <Page 
-            pageTitle="Home"
-            docTitle="Welcome to the Home Page"
+            pageTitle="Welcome!"
             navExtensionNode={null}
         >
             sup

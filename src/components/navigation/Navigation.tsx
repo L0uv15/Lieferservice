@@ -37,7 +37,9 @@ export default function Navigation(properties: NavigationProperties): React.JSX.
                 </div>
                 {/** ONLY FOR TESTING */}
 
-
+                <div>
+                    
+                </div>
             </div>
 
             <div>
