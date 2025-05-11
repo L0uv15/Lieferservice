@@ -25,17 +25,18 @@ const useStyles = makeStyles({
         maxHeight: "3rem",
         textAlign: "center",
         backgroundColor: "red",
-        padding: `0 ${tokens.spacingHorizontalXXS}`,
     },
     navigationNonExtensionWrapper: {
         width: "100%",
         minHeight: "100%",
         textAlign: "left",
-        backgroundColor: "blue",
+        backgroundColor: tokens.colorNeutralBackground1,
+        boxShadow: tokens.shadow4,
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
         maxHeight: "100%",
+        padding: `0 ${tokens.spacingHorizontalXXS}`,
     }
 })

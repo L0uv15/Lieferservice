@@ -3,7 +3,7 @@ import React from "react";
 import Navigation from "../navigation/Navigation";
 import PageProperties from "./PageProperties";
 
-export default function Page(properties: PageProperties): React.JSX.Element {
+export default function Page(properties: React.PropsWithChildren<PageProperties>): React.JSX.Element {
 
     const { pageWrapper, contentWrapper } = useStyles();
 
@@ -15,7 +15,7 @@ export default function Page(properties: PageProperties): React.JSX.Element {
         <div className={pageWrapper}>
             <Navigation extensionNode={properties.navExtensionNode ?? null} />
             <div className={contentWrapper}>
-                -- Content --
+                {properties.children}
             </div>
         </div>
     )
@@ -28,7 +28,7 @@ const useStyles = makeStyles({
         minHeight: "100vh",
         display: "flex",
         flexDirection: "column",
-        border: "1px solid red",
+        backgroundColor: tokens.colorNeutralBackground2
     },
     contentWrapper: {
         width: "100%",
@@ -37,6 +37,5 @@ const useStyles = makeStyles({
         margin: "0 auto",
         display: "flex",
         flexDirection: "column",
-        backgroundColor: tokens.colorBrandForeground1
     }
 })
