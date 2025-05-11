@@ -28,7 +28,10 @@ const useStyles = makeStyles({
         minHeight: "100vh",
         display: "flex",
         flexDirection: "column",
-        backgroundColor: tokens.colorNeutralBackground2
+        backgroundColor: tokens.colorNeutralBackground2,
+        position: "relative",
+        overflowX: "hidden",
+        margin: 0,
     },
     contentWrapper: {
         width: "100%",
@@ -37,5 +40,6 @@ const useStyles = makeStyles({
         margin: "0 auto",
         display: "flex",
         flexDirection: "column",
+        zIndex: 1,
     }
 })

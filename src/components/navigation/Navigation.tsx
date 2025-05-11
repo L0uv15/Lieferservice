@@ -1,14 +1,43 @@
-import { makeStyles, tokens } from "@fluentui/react-components";
+import { Button, makeStyles, tokens } from "@fluentui/react-components";
+import { useNavigate } from "react-router-dom";
 import NavigationProperties from "./NavigationProperties";
 
 
 export default function Navigation(properties: NavigationProperties): React.JSX.Element {
 
     const { navigationWrapper, navigationNonExtensionWrapper } = useStyles();
+    const navigate = useNavigate()
 
     return (
         <div className={navigationWrapper}>
             <div className={navigationNonExtensionWrapper}>
+
+
+                {/** ONLY FOR TESTING */}
+                <div>
+                    <Button
+                        appearance="transparent"
+                        size="small"
+                        onClick={() => {
+                            navigate("/")
+                        }}
+                    >
+                        Home
+                    </Button>
+
+                    <Button
+                        appearance="transparent"
+                        size="small"
+                        onClick={() => {
+                            navigate("/auth")
+                        }}
+                    >
+                        Auth
+                    </Button>
+                </div>
+                {/** ONLY FOR TESTING */}
+
+
             </div>
 
             <div>
@@ -25,6 +54,7 @@ const useStyles = makeStyles({
         maxHeight: "3rem",
         textAlign: "center",
         backgroundColor: "red",
+        zIndex: 1000,
     },
     navigationNonExtensionWrapper: {
         width: "100%",
