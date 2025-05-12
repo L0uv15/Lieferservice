@@ -1,15 +1,12 @@
 import Page from "../../components/page/Page";
 
-export default function HomePage(): React.JSX.Element {
-
-    //Use this as playground for now
+export default function AuthPage(): React.JSX.Element {
     return (
         <Page
-            title="Welcome!"
+            title="Login"
             navExtensionNode={null}
         >
-            sup
+
         </Page>
     )
-
 }

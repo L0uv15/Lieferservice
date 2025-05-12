@@ -2,8 +2,8 @@ import React from "react";
 
 type PageProperties = {
     navExtensionNode?: React.ReactNode,
-    pageTitle: string,
-    docTitle?: string,
+    title?: string,
+    documentTitle?: string,
 }
 
 export default PageProperties;

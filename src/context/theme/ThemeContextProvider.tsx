@@ -20,7 +20,7 @@ export default function ThemeContextProvider(properties: React.PropsWithChildren
     const value = React.useMemo<ThemeContext>(() => ({
         mode,
         setMode
-    }), [mode])
+    }), [mode, setMode])
 
     return (
         <themeContext.Provider value={value}>
