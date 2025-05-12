@@ -5,7 +5,7 @@ import PageProperties from "./PageProperties";
 
 export default function Page(properties: React.PropsWithChildren<PageProperties>): React.JSX.Element {
 
-    const { pageWrapper, contentWrapper } = useStyles();
+    const { pageWrapper, contentWrapper, pageTitleStyles } = useStyles();
 
     React.useEffect(() => {
         document.title = properties.docTitle ?? properties.pageTitle;
@@ -15,8 +15,7 @@ export default function Page(properties: React.PropsWithChildren<PageProperties>
         <div className={pageWrapper}>
             <Navigation extensionNode={properties.navExtensionNode ?? null} />
             <div className={contentWrapper}>
-                <h1>{properties.pageTitle}</h1>
-                {/** ONLY FOR TESTING */}
+                <h1 className={pageTitleStyles}>{properties.pageTitle}</h1>
                 {properties.children}
             </div>
         </div>
@@ -36,7 +35,7 @@ const useStyles = makeStyles({
         margin: 0,
     },
     contentWrapper: {
-        width: "100%",
+        width: "90%",
         maxWidth: "1440px",
         flexGrow: 1,
         margin: "0 auto",
@@ -44,5 +43,10 @@ const useStyles = makeStyles({
         flexDirection: "column",
         zIndex: 1,
         paddingTop: "2rem",
+    },
+    pageTitleStyles: {
+        marginBottom: "1rem",
+        fontSize: tokens.fontSizeHero700,
+        fontWeight: tokens.fontWeightBold,
     }
 })

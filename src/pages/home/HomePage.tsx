@@ -4,7 +4,7 @@ export default function HomePage(): React.JSX.Element {
 
     //ONLY FOR TESTING PURPOSES
     return (
-        <Page 
+        <Page
             pageTitle="Welcome!"
             navExtensionNode={null}
         >

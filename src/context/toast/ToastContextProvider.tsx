@@ -27,7 +27,7 @@ export default function ToastContextProvider(properties: React.PropsWithChildren
         <toastContext.Provider value={value}>
             <Toaster
                 toasterId={toasterId}
-                position="bottom-end"
+                position="top-start"
                 pauseOnHover
                 pauseOnWindowBlur
                 timeout={2000}
