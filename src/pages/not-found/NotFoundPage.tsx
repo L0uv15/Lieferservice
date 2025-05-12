@@ -16,11 +16,15 @@ export default function NotFoundPage(): React.JSX.Element {
 
     const [timeVal, setTimeVal] = React.useState<number>(5000)
 
+    //TODO: 
     React.useEffect(() => {
         const id = setInterval(() => {
-            if (timeVal === 5000) dispatchError({ primaryContent: "Diese Seite existiert nicht, wir leiten dich um." })
-            if (timeVal > 0) setTimeVal((prev) => prev - 100);
-            else navigate(generateHomeRootPath());
+            if (timeVal === 5000) dispatchError({ primaryContent: "Diese Seite scheint nicht zu existieren. Wir leiten dich um!" })
+            if (timeVal > 0) {
+                setTimeVal((prev) => prev - 100)
+            } else {
+                navigate(generateHomeRootPath());
+            };
         }, 100);
         return () => {
             clearInterval(id);
