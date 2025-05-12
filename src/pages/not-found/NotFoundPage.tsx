@@ -2,14 +2,36 @@ import { makeStyles, mergeClasses, tokens } from "@fluentui/react-components";
 import React from "react";
 import Page from "../../components/page/Page";
 
-import img from "../../_assets/images/yonghyun-lee.jpg"
+import { useNavigate } from "react-router-dom";
+import img from "../../_assets/images/yonghyun-lee.jpg";
+import ProgressBar from "../../components/progress-bar/ProgressBar";
+import useToastContext from "../../context/toast/useToastContext";
+import generateHomeRootPath from "../../router/misc/home/generators/generateHomeRootPath";
 
 export default function NotFoundPage(): React.JSX.Element {
 
     const { contentWrapper, errorWrapper, messageStyles, numberStyles, imageWrapper, imageStyles, gradientHelper } = useStyles();
+    const { dispatchError } = useToastContext();
+    const navigate = useNavigate();
+
+    const [timeVal, setTimeVal] = React.useState<number>(5000)
+
+    React.useEffect(() => {
+        const id = setInterval(() => {
+            if (timeVal === 5000) dispatchError({ primaryContent: "Diese Seite existiert nicht, wir leiten dich um." })
+            if (timeVal > 0) setTimeVal((prev) => prev - 100);
+            else navigate(generateHomeRootPath());
+        }, 100);
+        return () => {
+            clearInterval(id);
+        };
+    }, [timeVal, navigate, dispatchError]);
 
     return (
-        <Page documentTitle="Hups..">
+        <Page
+            documentTitle="ParkDrink - Hups.."
+            navExtensionNode={<ProgressBar max={5000} value={timeVal} />}
+        >
             <div className={contentWrapper}>
                 <div className={errorWrapper}>
                     <div className={mergeClasses(messageStyles, numberStyles)} style={{ backgroundImage: img }}>
