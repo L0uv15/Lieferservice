@@ -34,6 +34,16 @@ export default function Navigation(properties: NavigationProperties): React.JSX.
                     >
                         Auth
                     </Button>
+
+                    <Button
+                        appearance="transparent"
+                        size="small"
+                        onClick={() => {
+                            navigate("/99789/98237219087389012_32123")
+                        }}
+                    >
+                        NotFound
+                    </Button>
                 </div>
                 {/** ONLY FOR TESTING */}
 
