@@ -2,10 +2,10 @@ import Page from "../../components/page/Page";
 
 export default function HomePage(): React.JSX.Element {
 
-    //ONLY FOR TESTING PURPOSES
+    //Use this as playground for now
     return (
         <Page
-            pageTitle="Welcome!"
+            title="Welcome!"
             navExtensionNode={null}
         >
             sup

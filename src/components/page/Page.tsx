@@ -8,14 +8,14 @@ export default function Page(properties: React.PropsWithChildren<PageProperties>
     const { pageWrapper, contentWrapper, pageTitleStyles } = useStyles();
 
     React.useEffect(() => {
-        document.title = properties.docTitle ?? properties.pageTitle;
-    }, [properties.docTitle]);
+        document.title = `ParkDrink - ${properties.title}`;
+    }, [properties.title]);
 
     return (
         <div className={pageWrapper}>
             <Navigation extensionNode={properties.navExtensionNode ?? null} />
             <div className={contentWrapper}>
-                <h1 className={pageTitleStyles}>{properties.pageTitle}</h1>
+                <h1 className={pageTitleStyles}>{properties.title}</h1>
                 {properties.children}
             </div>
         </div>

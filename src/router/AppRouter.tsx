@@ -1,7 +1,9 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Page from "../components/page/Page";
+// import Page from "../components/page/Page";
 import HomePage from "../pages/home/HomePage";
+import NotFoundPage from "../pages/not-found/NotFoundPage";
+import getAuthRouter from "./auth/getAuthRouter";
 
 /**
  * @use AppRouter
@@ -11,10 +13,13 @@ import HomePage from "../pages/home/HomePage";
 export default function AppRouter(): React.JSX.Element {
   return (
     <BrowserRouter>
-        <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="*" element={<Page docTitle="Lieferservice - Test" pageTitle="Lieferservice - Test" />} />
-        </Routes>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        {getAuthRouter()}
+
+
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
     </BrowserRouter>
   );
 }
