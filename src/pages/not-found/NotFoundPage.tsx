@@ -16,7 +16,6 @@ export default function NotFoundPage(): React.JSX.Element {
 
     const [timeVal, setTimeVal] = React.useState<number>(5000)
 
-    //TODO: 
     React.useEffect(() => {
         const id = setInterval(() => {
             if (timeVal === 5000) dispatchError({ primaryContent: "Diese Seite scheint nicht zu existieren. Wir leiten dich um!" })
