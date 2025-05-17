@@ -35,11 +35,11 @@ const useStyles = makeStyles({
     slideStyles: {
         transform: "translate3d(0, 0, 0)",
         flex: "0 0 40%",
-        minWidth: "150px",
+        minWidth: "250px",
         marginLeft: "1vw",
         border: "1px solid black",
         height: "18vh",
-        minHeight: "100px"
+        minHeight: "200px"
     },
     carouselWrapper: {
         padding: "2vh",
