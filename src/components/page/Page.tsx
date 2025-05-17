@@ -5,15 +5,19 @@ import PageProperties from "./PageProperties";
 
 export default function Page(properties: React.PropsWithChildren<PageProperties>): React.JSX.Element {
 
-    const { pageWrapper, contentWrapper, pageTitleStyles } = useStyles();
+    const { pageWrapper, contentWrapper, pageTitleStyles, pageHeadExtensionWrapper } = useStyles();
 
     React.useEffect(() => {
-        document.title =  properties.documentTitle ?? `ParkDrink - ${properties.title}`;
+        document.title = properties.documentTitle ?? `ParkDrink - ${properties.title}`;
     }, [properties.documentTitle, properties.title]);
 
     return (
         <div className={pageWrapper}>
             <Navigation extensionNode={properties.navExtensionNode ?? null} />
+            {properties.pageHeadExtensionNode
+                ? <div className={pageHeadExtensionWrapper}>{properties.pageHeadExtensionNode}</div>
+                : null
+            }
             <div className={contentWrapper}>
                 <h1 className={pageTitleStyles}>{properties.title ?? ""}</h1>
                 {properties.children}
@@ -33,6 +37,11 @@ const useStyles = makeStyles({
         position: "relative",
         overflowX: "hidden",
         margin: 0,
+    },
+    pageHeadExtensionWrapper: {
+        minWidth: "100%",
+        height: "min-content",
+        marginTop: "1rem"
     },
     contentWrapper: {
         width: "90%",

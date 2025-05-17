@@ -67,6 +67,7 @@ const useStyles = makeStyles({
         textAlign: "center",
         backgroundColor: "red",
         zIndex: 1000,
+        position: "sticky"
     },
     navigationNonExtensionWrapper: {
         width: "100%",
