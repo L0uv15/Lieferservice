@@ -18,6 +18,7 @@ export default function Card(properties: CardProperties): React.JSX.Element {
 const useStyles = makeStyles({
     cardBaseStyles: {
         backgroundColor: tokens.colorNeutralBackground1,
-        borderRadius: tokens.borderRadiusLarge
+        borderRadius: tokens.borderRadiusXLarge,
+        overflow: "hidden"
     }
 });

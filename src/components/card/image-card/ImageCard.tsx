@@ -37,7 +37,6 @@ const useStyles = makeStyles({
         minHeight: "100px",
         maxHeight: "250px",
         aspectRatio: "2/1",
-        border: "1px solid red"
     },
     imageStyles: {
         minWidth: "100%",
