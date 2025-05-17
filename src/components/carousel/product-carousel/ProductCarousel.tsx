@@ -1,6 +1,5 @@
 import React from "react";
 import Carousel from "../Carousel";
-import ImageCard from "../../card/image-card/ImageCard";
 import { makeStyles, tokens } from "@fluentui/react-components";
 
 
@@ -18,14 +17,14 @@ export default function ProductCarousel(): React.JSX.Element {
             )
         }
         return slides;
-    }, []);
+    }, [slideStyles]);
 
     return (
         <div className={carouselWrapper}>
             <Carousel
                 slides={slides}
                 options={{ loop: true }}
-
+                enableBorderingButtons
             />
         </div>
 
@@ -36,10 +35,11 @@ const useStyles = makeStyles({
     slideStyles: {
         transform: "translate3d(0, 0, 0)",
         flex: "0 0 40%",
-        minWidth: 0,
+        minWidth: "150px",
         marginLeft: "1vw",
         border: "1px solid black",
         height: "18vh",
+        minHeight: "100px"
     },
     carouselWrapper: {
         padding: "2vh",

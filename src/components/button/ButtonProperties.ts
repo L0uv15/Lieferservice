@@ -9,6 +9,8 @@ type ButtonProperties = Pick<ButtonProps,
     | "shape"
     | "size"
     | "style"
->
+> & {
+    onClick(e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void
+}
 
 export default ButtonProperties;

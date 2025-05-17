@@ -20,7 +20,7 @@ export default function ImageCard(properties: ImageCardProperties): React.JSX.El
                 />
             </CardPreview>
         )
-    }, [properties.logo, properties.image])
+    }, [properties.logo, properties.image, imageStyles])
 
     return (
         <Card
