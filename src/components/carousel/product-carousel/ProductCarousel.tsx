@@ -27,7 +27,6 @@ export default function ProductCarousel(): React.JSX.Element {
                 enableBorderingButtons
             />
         </div>
-
     )
 }
 
