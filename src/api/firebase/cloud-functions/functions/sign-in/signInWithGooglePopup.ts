@@ -1,8 +1,8 @@
 import { signInWithPopup, signOut } from "firebase/auth";
-import User from "../../../../schema/user/User";
-import userSchema_import from "../../../../schema/user/userSchema_import";
-import ApiError from "../../../utility/error/ApiError";
-import ApiResult from "../../../utility/result/ApiResult";
+import User from "../../../../../schema/user/User";
+import userSchema_import from "../../../../../schema/user/userSchema_import";
+import ApiError from "../../../../utility/error/ApiError";
+import ApiResult from "../../../../utility/result/ApiResult";
 import SignInWithGooglePopupProperties from "./SignInWithGooglePopupProperties";
 
 export default async function signInWithGooglePopup(args: SignInWithGooglePopupProperties): ApiResult<User> {

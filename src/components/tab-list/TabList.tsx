@@ -30,6 +30,7 @@ export default function TabList(properties: TabListProperties): React.JSX.Elemen
                             icon={tab.icon}
                             onClick={() => properties.onTabSelect(tab.value)}
                             value={tab.value}
+                            className={tab.className}
                         />
                     )
                 })
