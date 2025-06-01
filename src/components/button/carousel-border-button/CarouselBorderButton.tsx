@@ -3,6 +3,8 @@ import React from "react";
 import Button from "../Button";
 import CarouselBorderButtonProperties from "./CarouselBorderButtonProperties";
 
+
+//TODO: check use cases, remove if not needed
 export default function CarouselBorderButton(properties: React.PropsWithChildren<CarouselBorderButtonProperties>): React.JSX.Element {
 
     const { borderButtonStyles } = useStyles();
