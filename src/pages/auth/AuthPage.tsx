@@ -6,7 +6,7 @@ export default function AuthPage(): React.JSX.Element {
             title="Login"
             navExtensionNode={null}
         >
-
+            
         </Page>
     )
 }
